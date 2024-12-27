@@ -7,8 +7,9 @@ var kColorScheme = ColorScheme.fromSeed(
 
 var kDarkColorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
-  seedColor: const Color.fromARGB(255, 5, 59, 125),
+  seedColor: const Color.fromARGB(255, 5, 99, 125),
 );
+
 void main() {
   runApp(
     MaterialApp(
@@ -34,7 +35,7 @@ void main() {
         colorScheme: kColorScheme,
         appBarTheme: const AppBarTheme().copyWith(
           backgroundColor: kColorScheme.onPrimaryContainer,
-          foregroundColor: kColorScheme.primary,
+          foregroundColor: kColorScheme.primaryContainer,
         ),
         cardTheme: const CardTheme().copyWith(
           color: kColorScheme.secondaryContainer,
@@ -50,9 +51,10 @@ void main() {
         ),
         textTheme: ThemeData().textTheme.copyWith(
               titleLarge: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: kColorScheme.onSecondaryContainer,
-                  fontSize: 15),
+                fontWeight: FontWeight.bold,
+                color: kColorScheme.onSecondaryContainer,
+                fontSize: 16,
+              ),
             ),
       ),
       home: const Expenses(),
