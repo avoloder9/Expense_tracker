@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:expense_tracker/models/expense.dart';
+import 'package:intl/intl.dart';
 
 class NewExpense extends StatefulWidget {
   const NewExpense({super.key, required this.onAddExpense});
@@ -19,6 +20,7 @@ class _NewExpenseState extends State<NewExpense> {
   final _amountController = TextEditingController();
   DateTime? _selectedDate;
   Category _selectedCategory = Category.leisure;
+  final DateFormat formatter = DateFormat('dd/MM/yyyy');
 
   void _presentDatePicker() async {
     final now = DateTime.now();
@@ -32,6 +34,12 @@ class _NewExpenseState extends State<NewExpense> {
     setState(() {
       _selectedDate = pickedDate;
     });
+  }
+
+  String get formattedDate {
+    return _selectedDate != null
+        ? formatter.format(_selectedDate!)
+        : 'No date selected';
   }
 
   void _showDialog() {

@@ -27,6 +27,30 @@ class _ExpensesState extends State<Expenses> {
       date: DateTime.now(),
       category: Category.leisure,
     ),
+    Expense(
+      title: 'Groceries',
+      amount: 45.30,
+      date: DateTime(2024, 12, 20),
+      category: Category.food,
+    ),
+    Expense(
+      title: 'Monthly Bus Pass',
+      amount: 50.00,
+      date: DateTime(2024, 12, 10),
+      category: Category.travel,
+    ),
+    Expense(
+      title: 'Coffee with Friends',
+      amount: 8.50,
+      date: DateTime(2024, 12, 18),
+      category: Category.leisure,
+    ),
+    Expense(
+      title: 'Online Subscription',
+      amount: 12.99,
+      date: DateTime(2024, 12, 05),
+      category: Category.work,
+    ),
   ];
 
   void _openAddExpenseOverlay() {
@@ -84,6 +108,7 @@ class _ExpensesState extends State<Expenses> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter ExpenseTracker'),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: _openAddExpenseOverlay,

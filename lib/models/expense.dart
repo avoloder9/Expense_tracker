@@ -30,6 +30,7 @@ class Expense {
   final Category category;
 
   String get formattedDate {
+    final formatter = DateFormat('dd/MM/yyyy');
     return formatter.format(date);
   }
 }
